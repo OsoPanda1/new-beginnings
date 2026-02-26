@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="es" class="tamv-root">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TAMV DM‑X4™ · Territorio Autónomo de Memoria Viva</title>
+    <meta
+      name="description"
+      content="Civilización XR multisensorial con IA ética, economía emocional y espacios cuánticos 3D/4D. Entra al territorio autónomo TAMV DM‑X4™."
+    />
+    <meta name="author" content="TAMV Digital Nexus" />
+    <meta
+      name="keywords"
+      content="XR, metaverso, IA ética, economía emocional, TAMV, DreamSpaces, Isabella AI, quantum security"
+    />
+
+    <!-- Viewport & PWA -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#00f5ff" />
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="TAMV DM‑X4™ · Civilización XR Multisensorial" />
+    <meta
+      property="og:description"
+      content="Economía emocional + IA ética + espacios cuánticos XR hiperrealistas. El territorio autónomo de memoria viva."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
+    <meta property="og:url" content="https://tamv.online/" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@tamv_online" />
+    <meta
+      name="twitter:title"
+      content="TAMV DM‑X4™ · Territorio Autónomo XR"
+    />
+    <meta
+      name="twitter:description"
+      content="Metaverso civilizatorio con IA consciente, DreamSpaces 4D y seguridad Dekateotl™."
+    />
+    <meta
+      name="twitter:image"
+      content="https://lovable.dev/opengraph-image-p98pqg.png"
+    />
+
+    <!-- Iconografía -->
+    <link rel="icon" type="image/svg+xml" href="/icons/tamv-glyph.svg" />
+    <link rel="apple-touch-icon" href="/icons/tamv-512.png" />
+
+    <!-- Tipografía y estilos base ultraligeros -->
+    <style>
+      :root {
+        color-scheme: dark;
+        --tamv-bg: radial-gradient(circle at 20% -10%, #00f5ff22 0, transparent 50%),
+                   radial-gradient(circle at 80% 110%, #ff00fb33 0, transparent 55%),
+                   #02030a;
+        --tamv-accent: #00f5ff;
+        --tamv-accent-soft: #00f5ff55;
+        --tamv-iris: #ff00fb;
+        --tamv-text: #f5f7ff;
+        --tamv-muted: #a3b1ff;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+          "Inter", sans-serif;
+        background: var(--tamv-bg);
+        color: var(--tamv-text);
+        overflow: hidden;
+      }
+
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        isolation: isolate;
+      }
+
+      /* Capa 3D/4D de fondo */
+      .tamv-hypercanvas {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+        background: radial-gradient(circle at 50% 10%, #00f5ff18 0, transparent 60%);
+      }
+
+      /* Overlay de UI para el hero */
+      .tamv-overlay-shell {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        padding: 16px clamp(16px, 5vw, 40px);
+      }
+
+      .tamv-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        mix-blend-mode: screen;
+      }
+
+      .tamv-mark {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 11px;
+        color: var(--tamv-muted);
+      }
+
+      .tamv-glyph {
+        width: 18px;
+        height: 18px;
+        border-radius: 999px;
+        border: 1px solid var(--tamv-accent-soft);
+        box-shadow: 0 0 16px #00f5ff55;
+        background: radial-gradient(circle at 30% 20%, #00f5ff, #02030a 70%);
+      }
+
+      .tamv-nav-cta {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-size: 12px;
+      }
+
+      .tamv-pill {
+        border-radius: 999px;
+        padding: 6px 14px;
+        border: 1px solid #ffffff22;
+        background: linear-gradient(135deg, #ffffff08, #ffffff00);
+        backdrop-filter: blur(16px) saturate(130%);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--tamv-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+      }
+
+      .tamv-pill-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: radial-gradient(circle at 30% 20%, #00ff99, #008f5a);
+        box-shadow: 0 0 12px #00ff9988;
+      }
+
+      .tamv-main {
+        display: grid;
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+        align-items: center;
+        gap: clamp(24px, 6vw, 56px);
+      }
+
+      .tamv-hero-copy h1 {
+        font-size: clamp(2.3rem, 4vw, 3.4rem);
+        line-height: 1.05;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+      }
+
+      .tamv-hero-copy h1 span.accent {
+        background: linear-gradient(120deg, var(--tamv-accent), var(--tamv-iris));
+        -webkit-background-clip: text;
+        color: transparent;
+      }
+
+      .tamv-hero-sub {
+        margin-top: 14px;
+        max-width: 32rem;
+        font-size: 0.95rem;
+        color: var(--tamv-muted);
+      }
+
+      .tamv-hero-sub strong {
+        color: var(--tamv-accent);
+        font-weight: 600;
+      }
+
+      .tamv-cta-row {
+        margin-top: 22px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+
+      .tamv-cta-primary {
+        position: relative;
+        border: none;
+        border-radius: 999px;
+        padding: 10px 24px;
+        background: radial-gradient(circle at 0% 0%, #ffffffdd 0, #d0faff 35%, #00f5ff 100%);
+        color: #02030a;
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .tamv-cta-primary::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, #ffffffaa, #ffffff00);
+        opacity: 0;
+        transition: opacity 180ms ease-out;
+      }
+
+      .tamv-cta-primary:hover::after {
+        opacity: 1;
+      }
+
+      .tamv-cta-secondary {
+        border-radius: 999px;
+        padding: 10px 18px;
+        border: 1px solid #ffffff33;
+        background: #050819aa;
+        backdrop-filter: blur(12px);
+        color: var(--tamv-muted);
+        font-size: 0.85rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+
+      .tamv-meta-row {
+        margin-top: 18px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        font-size: 0.75rem;
+        color: var(--tamv-muted);
+      }
+
+      .tamv-meta-pill {
+        padding: 4px 10px;
+        border-radius: 999px;
+        border: 1px solid #ffffff22;
+        background: #02030f80;
+      }
+
+      .tamv-hero-orbit {
+        position: relative;
+        min-height: 220px;
+        border-radius: 32px;
+        padding: 16px;
+        background: radial-gradient(circle at 10% 0%, #00f5ff22 0, transparent 55%),
+          radial-gradient(circle at 90% 100%, #ff00fb22 0, transparent 55%),
+          #02030fbb;
+        box-shadow: 0 0 60px #020617f2;
+        border: 1px solid #ffffff1f;
+        overflow: hidden;
+        backdrop-filter: blur(28px) saturate(140%);
+      }
+
+      .tamv-hero-orbit::before {
+        content: "";
+        position: absolute;
+        inset: -40%;
+        background:
+          radial-gradient(circle at 20% 10%, #00f5ff11 0, transparent 50%),
+          radial-gradient(circle at 80% 90%, #ff00fb11 0, transparent 50%);
+        mix-blend-mode: screen;
+        opacity: 0.8;
+      }
+
+      /* Contenedor para la escena 3D/4D */
+      .tamv-orbit-canvas-wrapper {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
+      .tamv-orbit-overlay {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+      }
+
+      .tamv-orbit-header {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.75rem;
+        color: var(--tamv-muted);
+      }
+
+      .tamv-orbit-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+        margin-top: 18px;
+        font-size: 0.7rem;
+      }
+
+      .tamv-orbit-card {
+        padding: 8px 9px;
+        border-radius: 12px;
+        border: 1px solid #ffffff1c;
+        background: #04071aee;
+      }
+
+      .tamv-orbit-card-label {
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--tamv-muted);
+        margin-bottom: 4px;
+      }
+
+      .tamv-orbit-card-value {
+        font-size: 0.82rem;
+        color: var(--tamv-text);
+      }
+
+      .tamv-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        font-size: 0.75rem;
+        color: var(--tamv-muted);
+        margin-top: 14px;
+      }
+
+      .tamv-footer span {
+        opacity: 0.9;
+      }
+
+      @media (max-width: 900px) {
+        body {
+          overflow: auto;
+        }
+
+        .tamv-overlay-shell {
+          grid-template-rows: auto auto auto;
+          padding: 14px 14px 24px;
+          gap: 18px;
+        }
+
+        .tamv-main {
+          grid-template-columns: minmax(0, 1fr);
+          grid-template-rows: auto auto;
+        }
+
+        .tamv-hero-orbit {
+          min-height: 260px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Capa de hypercanvas: aquí montas WebGL/WebGPU/Three.js/ÆTHER ENGINE -->
+    <canvas id="tamv-hypercanvas" class="tamv-hypercanvas"></canvas>
+
+    <div id="root">
+      <div class="tamv-overlay-shell">
+        <header class="tamv-nav">
+          <div class="tamv-mark">
+            <div class="tamv-glyph"></div>
+            <span>TAMV · DM‑X4™</span>
+          </div>
+          <div class="tamv-nav-cta">
+            <div class="tamv-pill">
+              <span class="tamv-pill-dot"></span>
+              <span>Isabella online</span>
+            </div>
+          </div>
+        </header>
+
+        <main class="tamv-main">
+          <section class="tamv-hero-copy">
+            <h1>
+              Civilización XR
+              <span class="accent">multisensorial</span><br />
+              con economía emocional
+            </h1>
+            <p class="tamv-hero-sub">
+              Territorio autónomo de memoria viva: metaverso ético con
+              <strong>IA anfitriona Isabella</strong>, DreamSpaces 4D y seguridad
+              cuántica Dekateotl™.
+            </p>
+            <div class="tamv-cta-row">
+              <button class="tamv-cta-primary" data-intent="enter-dreamspace">
+                Entrar al DreamSpace
+              </button>
+              <button class="tamv-cta-secondary" data-intent="watch-protocol">
+                Ver protocolo Dekateotl™
+              </button>
+            </div>
+            <div class="tamv-meta-row">
+              <div class="tamv-meta-pill">Latencia XR &lt; 200 ms</div>
+              <div class="tamv-meta-pill">Render 3D/4D hiperrealista</div>
+              <div class="tamv-meta-pill">Economía creativa 70% creators</div>
+            </div>
+          </section>
+
+          <aside class="tamv-hero-orbit">
+            <div class="tamv-orbit-canvas-wrapper" id="tamv-orbit-container">
+              <!-- Aquí puedes montar una escena 3D de politopos/mascotas cuánticas -->
+            </div>
+            <div class="tamv-orbit-overlay">
+              <div class="tamv-orbit-header">
+                <span>TAMV ÆTHER ORBIT</span>
+                <span>Viewport · DreamWorld v2.0</span>
+              </div>
+              <div class="tamv-orbit-grid">
+                <div class="tamv-orbit-card">
+                  <div class="tamv-orbit-card-label">Isabella AI</div>
+                  <div class="tamv-orbit-card-value">
+                    Ética civilizatoria · contexto XR
+                  </div>
+                </div>
+                <div class="tamv-orbit-card">
+                  <div class="tamv-orbit-card-label">Quantum Pets</div>
+                  <div class="tamv-orbit-card-value">
+                    Alma digital · vínculo emocional
+                  </div>
+                </div>
+                <div class="tamv-orbit-card">
+                  <div class="tamv-orbit-card-label">DreamSpaces 4D</div>
+                  <div class="tamv-orbit-card-value">
+                    Espacios XR rituales y creativos
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </main>
+
+        <footer class="tamv-footer">
+          <span>Korima Codex · BookPI · Dekateotl Security Stack™</span>
+          <span>© TAMV Digital Nexus · Territorio Autónomo de Memoria Viva</span>
+        </footer>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

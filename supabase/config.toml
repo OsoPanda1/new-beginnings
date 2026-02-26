@@ -1,0 +1,19 @@
+project_id = "myuudyojzguahuerqwmc"
+
+[functions.isabella-speak]
+verify_jwt = false
+
+[functions.isabella-listen]
+verify_jwt = false
+
+[functions.isabella-chat]
+verify_jwt = false
+
+[functions.lottery-vrf]
+verify_jwt = false
+
+[functions.webauthn-auth]
+verify_jwt = false
+
+[functions.bookpi-anchor]
+verify_jwt = true
