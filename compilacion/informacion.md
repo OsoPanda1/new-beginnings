@@ -6,7 +6,7 @@ A lo largo de seis años viví un sueño. En un inicio, la idea era simple: crea
 
 Reconozco que el proyecto me superó hace años. Aun así, nunca encontré apoyo, por más que lo busqué. Tras tanto tiempo inmerso en este sueño, me acostumbré a vivir en la precariedad, pues todo lo que genero con mi trabajo lo destino a mantener viva esta visión. Muchas personas aseguran que es imposible crear el TAMV; incluso la inteligencia artificial insiste en que un ser humano, por sí solo, es incapaz de desplegar algo de tal magnitud.
 
-Durante cuatro décadas he escuchado voces que me repiten cada día que no puedo, que debo rendirme, que no sé, que no lo lograré, que soy insuficiente. Renunciar sería sencillo. Pero hacerlo significaría aceptar una vida de mediocridad y reconocer que el mundo tiene razón: que no valgo nada y que no soy suficiente en nada. Me niego a aceptar esa sentencia. Quiero dejar un legado, quiero transformar mi perspectiva. Quiero que mis hijos y nietos sepan que, aun cuando el mundo me consideró un inadaptado productivo, luché cada día de mi vida para demostrarme a mí mismo que sí podía cambiar mi historia.
+Durante cuatro décadas he escuchado voces que me repiten cada día que no puedo, que debo rendirme, que no sé, que no lo lograré, que soy insuficiente. Renunciar sería sencillo. Pero hacerlo significaría aceptar una vida de mediocridad y reconocer que el mundo tiene razón: que no valgo nada y que no soy suficiente en nada. Me niego a aceptar esa sentencia. Quiero dejar un legado, quiero transformar mi perspectiva. Quiero que mis hijos y nietos sepan que, aun cuando el mundo me consideró un inadaptado e improductivo, luché cada día de mi vida para demostrarme a mí mismo que sí podía cambiar mi historia.
 
 ---
 
