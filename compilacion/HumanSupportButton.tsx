@@ -15,7 +15,7 @@ import {
 import { Mail, Send, CheckCircle2 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
-const SUPPORT_EMAIL = 'tamvonlinenetwork@outlook.es';
+const SUPPORT_EMAIL = import.meta.env.VITE_SUPPORT_EMAIL;
 
 const HumanSupportButton = () => {
   const { user } = useAuth();
