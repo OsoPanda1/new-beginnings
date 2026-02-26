@@ -112,8 +112,9 @@ const CertificateGenerator = ({
       });
 
       // Student name
+      const nameWidth = helveticaBold.widthOfTextAtSize(studentName.toUpperCase(), 32);
       page.drawText(studentName.toUpperCase(), {
-        x: width / 2 - (studentName.length * 12),
+        x: width / 2 - nameWidth / 2,
         y: height - 280,
         size: 32,
         font: helveticaBold,
