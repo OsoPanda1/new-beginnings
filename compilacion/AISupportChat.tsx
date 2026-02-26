@@ -54,7 +54,7 @@ Puedo ayudarte con:
     if (!input.trim() || isTyping || limitReached) return;
 
     const userMessage: Message = {
-      id: Date.now().toString(),
+      id: crypto.randomUUID(),
       role: "user",
       content: input.trim(),
       timestamp: new Date(),
