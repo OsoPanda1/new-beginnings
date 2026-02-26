@@ -109,7 +109,8 @@ Puedo ayudarte con:
         {
           id: (Date.now() + 1).toString(),
           role: "assistant",
-          content: "Lo siento, hubo un error al procesar tu pregunta. Intenta de nuevo o contacta soporte: tamvonlinenetwork@outlook.es",
+          content: `Lo siento, hubo un error al procesar tu pregunta. Intenta de nuevo o contacta soporte: ${import.meta.env.VITE_SUPPORT_EMAIL}`,
+
           timestamp: new Date(),
         },
       ]);
