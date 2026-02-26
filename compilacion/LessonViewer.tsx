@@ -231,7 +231,7 @@ const LessonViewer = ({
             {items.map((item, i) => (
               <li key={i} className="flex items-start gap-3 text-muted-foreground">
                 <Sparkles className="w-4 h-4 text-primary mt-1 flex-shrink-0" />
-                <span>{item.replace(/^-\\s*/, "")}</span>
+                <span>{item.replace(/^-\s*/, "")}</span>
               </li>
             ))}
           </ul>
