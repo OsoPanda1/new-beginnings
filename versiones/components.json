@@ -1,0 +1,65 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+
+  /* Modo de generación de la librería de componentes */
+  "style": "default",            // Usa el preset base de shadcn/ui; la tematización TAMV se hace en Tailwind.
+  "rsc": false,                  // Los componentes se generan como Client Components (CSR/SSR clásico).
+  "tsx": true,                   // Todo componente se emite en TSX para tipado estricto y DX avanzada.
+
+  "tailwind": {
+    /* Archivo de configuración Tailwind (tokens, themes, plugins internos TAMV) */
+    "config": "tailwind.config.ts",
+
+    /* Entry CSS donde se importan @tailwind base/components/utilities + capas TAMV */
+    "css": "src/index.css",
+
+    /* Color semilla para el tema; se combina con la paleta MSR/TAMVTRIX en la config */
+    "baseColor": "slate",
+
+    /* Exporta variables CSS (color, spacing, radius, z‑layers) para consumo en 3D/XR/WebGL */
+    "cssVariables": true,
+
+    /* Prefijo opcional para clases utilitarias generadas; vacío para mantener compatibilidad con ecosistema actual */
+    "prefix": ""
+  },
+
+  "aliases": {
+    /*
+      Ruta base de componentes de aplicación (layouts, shells, widgets de negocio,
+      vistas de DevHub, MSR dashboards, formularios de protocolos Fénix/Hoyo Negro, etc.).
+    */
+    "components": "@/components",
+
+    /*
+      Utilidades puras (funciones de formato, helpers de fechas, parsers de MSR,
+      validadores de esquemas, adaptadores de EOCT para UI, etc.).
+    */
+    "utils": "@/lib/utils",
+
+    /*
+      Librería de UI atómica generada con shadcn/ui (botones, inputs, sheets,
+      accordions, toasts, modals), extendida con tokens y motion propios del TAMV.
+      Es la capa sobre la que se construye toda la experiencia visual.
+    */
+    "ui": "@/components/ui",
+
+    /*
+      Código de dominio transversal:
+      - clientes de MSR (`@tamv/blockchain/*`),
+      - guardianía (Anubis/ORUS/Aztek),
+      - radares (Ojo de Ra/Quetzalcóatl/MOS),
+      - conectores de observabilidad (OTel),
+      - DevHub/PRISMA, etc.
+      Aquí viven servicios, adaptadores y modelos.
+    */
+    "lib": "@/lib",
+
+    /*
+      Hooks reutilizables:
+      - `useSessionGuard`, `useEOCTGate`, `useMSRTransaction`,
+      - `useRadarFeed`, `useDevhubClaim`, `useProtocolPhoenix`, etc.
+      Concentran lógica de orquestación entre UI y capa de dominio.
+    */
+    "hooks": "@/hooks"
+  }
+}
