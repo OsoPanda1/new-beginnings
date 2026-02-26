@@ -1,0 +1,85 @@
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ],
+  "compilerOptions": {
+    /* Raíz de resolución para todo el ecosistema TAMV–Isabella–MSR */
+    "baseUrl": ".",
+
+    /* Alias globales: núcleos, tríada federada, MSR, radares y DevHub PRISMA */
+    "paths": {
+      "@/*": ["./src/*"],
+
+      /* Núcleo híbrido quantum‑tradicional */
+      "@tamv/core/*": ["./src/core/*"],
+      "@tamv/quantum/*": ["./src/quantum/*"],
+      "@tamv/traditional/*": ["./src/traditional/*"],
+      "@tamv/hybrid/*": ["./src/hybrid/*"],
+
+      /* Triple Federado */
+      "@tamv/federation/technical/*": ["./src/federation/technical/*"],
+      "@tamv/federation/documental/*": ["./src/federation/documental/*"],
+      "@tamv/federation/ethics/*": ["./src/federation/ethics/*"],
+
+      /* Blockchain MSR inteligente + BookPI + tamvcrums + policies */
+      "@tamv/blockchain/*": ["./src/blockchain/*"],
+      "@tamv/blockchain/ledger/*": ["./src/blockchain/ledger/*"],
+      "@tamv/blockchain/bookpi/*": ["./src/blockchain/bookpi/*"],
+      "@tamv/blockchain/tamvcrums/*": ["./src/blockchain/tamvcrums/*"],
+      "@tamv/blockchain/policies/*": ["./src/blockchain/policies/*"],
+
+      /* Seguridad avanzada y marcos sentinela */
+      "@tamv/security/*": ["./src/security/*"],
+      "@tamv/security/hsm/*": ["./src/security/hsm/*"],
+      "@tamv/security/kms/*": ["./src/security/kms/*"],
+      "@tamv/security/eoct/*": ["./src/security/eoct/*"],
+      "@tamv/security/anubis/*": ["./src/security/anubis/*"],
+      "@tamv/security/orus/*": ["./src/security/orus/*"],
+      "@tamv/security/aztek-gods/*": ["./src/security/aztek-gods/*"],
+
+      /* Radares Ojo de Ra / Quetzalcóatl / MOS */
+      "@tamv/radar/ra/*": ["./src/radar/ra/*"],
+      "@tamv/radar/quetzalcoatl/*": ["./src/radar/quetzalcoatl/*"],
+      "@tamv/radar/mos/*": ["./src/radar/mos/*"],
+
+      /* UI · XR · 3D · Campo TAMVTRIX */
+      "@tamv/ui/*": ["./src/ui/*"],
+      "@tamv/ui/xr/*": ["./src/ui/xr/*"],
+      "@tamv/ui/3d/*": ["./src/ui/3d/*"],
+      "@tamv/ui/tamvtrix/*": ["./src/ui/tamvtrix/*"],
+
+      /* Infraestructura, observabilidad y notebooks (OpenTofu, Pulumi, OTel) */
+      "@tamv/infra/*": ["./src/infra/*"],
+      "@tamv/infra/mesh/*": ["./src/infra/mesh/*"],
+      "@tamv/infra/observability/*": ["./src/infra/observability/*"],
+      "@tamv/infra/notebooks/*": ["./src/infra/notebooks/*"],
+
+      /* DevHub, Muro de Reconocimientos, documentación viva PRISMA */
+      "@tamv/devhub/*": ["./src/devhub/*"],
+      "@tamv/devhub/recognitions/*": ["./src/devhub/recognitions/*"],
+      "@tamv/devhub/docs/*": ["./src/devhub/docs/*"],
+
+      /* Isabella · Koima Codex · ecosistema cognitivo */
+      "@isabella/core/*": ["./src/isabella/core/*"],
+      "@isabella/agents/*": ["./src/isabella/agents/*"],
+      "@isabella/koima-codex/*": ["./src/isabella/koima-codex/*"],
+      "@isabella/tools/*": ["./src/isabella/tools/*"]
+    },
+
+    /* Reglas de calidad constitucional para todo el monorepo */
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Soporte gradual para JS legado (solo donde sea necesario) */
+    "allowJs": true,
+
+    /* Rendimiento del compilador en ecosistema grande */
+    "skipLibCheck": true
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    /* Runtime de la app TAMV: Web, XR y paneles civiles */
+    "target": "ES2021",
+    "lib": ["ES2021", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "jsx": "react-jsx",
+    "useDefineForClassFields": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+
+    /* Modo estricto constitucional para UI y lógica cliente */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Resolución de paths centrada en la experiencia de app */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+
+      /* Núcleo híbrido quantum‑tradicional */
+      "@tamv/core/*": ["./src/core/*"],
+      "@tamv/quantum/*": ["./src/quantum/*"],
+      "@tamv/traditional/*": ["./src/traditional/*"],
+      "@tamv/hybrid/*": ["./src/hybrid/*"],
+
+      /* Tríada federada aplicada a la app (políticas, UI, flujos) */
+      "@tamv/federation/technical/*": ["./src/federation/technical/*"],
+      "@tamv/federation/documental/*": ["./src/federation/documental/*"],
+      "@tamv/federation/ethics/*": ["./src/federation/ethics/*"],
+
+      /* Ecosistema cognitivo Isabella + Koima Codex para UI/UX */
+      "@isabella/core/*": ["./src/isabella/core/*"],
+      "@isabella/agents/*": ["./src/isabella/agents/*"],
+      "@isabella/koima-codex/*": ["./src/isabella/koima-codex/*"],
+      "@isabella/tools/*": ["./src/isabella/tools/*"],
+
+      /* Blockchain MSR vista desde la app (wallet, historia, PRISMA) */
+      "@tamv/blockchain/*": ["./src/blockchain/*"],
+      "@tamv/blockchain/ledger/*": ["./src/blockchain/ledger/*"],
+      "@tamv/blockchain/bookpi/*": ["./src/blockchain/bookpi/*"],
+      "@tamv/blockchain/tamvcrums/*": ["./src/blockchain/tamvcrums/*"],
+      "@tamv/blockchain/policies/*": ["./src/blockchain/policies/*"],
+      "@tamv/blockchain/protocols/*": ["./src/blockchain/protocols/*"],
+
+      /* Seguridad visible para usuario: guardianía, sesiones, permisos */
+      "@tamv/security/*": ["./src/security/*"],
+      "@tamv/security/hsm/*": ["./src/security/hsm/*"],
+      "@tamv/security/kms/*": ["./src/security/kms/*"],
+      "@tamv/security/eoct/*": ["./src/security/eoct/*"],
+      "@tamv/security/anubis/*": ["./src/security/anubis/*"],
+      "@tamv/security/orus/*": ["./src/security/orus/*"],
+      "@tamv/security/aztek-gods/*": ["./src/security/aztek-gods/*"],
+
+      /* Radares y paneles de vigilancia que se muestran en la app */
+      "@tamv/radar/ra/*": ["./src/radar/ra/*"],
+      "@tamv/radar/quetzalcoatl/*": ["./src/radar/quetzalcoatl/*"],
+      "@tamv/radar/mos/*": ["./src/radar/mos/*"],
+
+      /* Infra/observabilidad solo en lo que impacta la UI (status, health) */
+      "@tamv/infra/*": ["./src/infra/*"],
+      "@tamv/infra/observability/*": ["./src/infra/observability/*"],
+
+      /* DevHub, PRISMA y Muro de Paradigmas Rotos para front */
+      "@tamv/devhub/*": ["./src/devhub/*"],
+      "@tamv/devhub/recognitions/*": ["./src/devhub/recognitions/*"],
+      "@tamv/devhub/docs/*": ["./src/devhub/docs/*"],
+      "@tamv/devhub/prisma/*": ["./src/devhub/prisma/*"],
+
+      /* UI · XR · 3D · campo TAMVTRIX y ceremonias de inicio (Fénix, Hoyo Negro, Iniciación) */
+      "@tamv/ui/*": ["./src/ui/*"],
+      "@tamv/ui/xr/*": ["./src/ui/xr/*"],
+      "@tamv/ui/3d/*": ["./src/ui/3d/*"],
+      "@tamv/ui/tamvtrix/*": ["./src/ui/tamvtrix/*"],
+      "@tamv/ui/protocols/*": ["./src/ui/protocols/*"]
+    },
+
+    /* Depuración enfocada a experiencia y auditoría visual */
+    "sourceMap": true,
+    "inlineSources": true,
+
+    /* Tipos de entorno web (Node/tooling quedan en tsconfig.node.json) */
+    "types": ["vite/client"]
+  },
+  "include": [
+    "src",
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "dist",
+    "build",
+    "node_modules",
+    "**/*.test.*",
+    "**/*.spec.*"
+  ]
+}
