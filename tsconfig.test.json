@@ -1,0 +1,22 @@
+{
+  "extends": "./tsconfig.app.json",
+  "compilerOptions": {
+    /* 🧪 Entorno de pruebas TAMV */
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "noEmit": true,
+
+    /* Tipos explícitos para pruebas */
+    "types": ["jest", "node"],
+
+    /* Permite flexibilidad en tests */
+    "skipLibCheck": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+
+    /* Mantiene consistencia de casing */
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["tests", "**/*.test.ts", "**/*.test.tsx"],
+  "exclude": ["node_modules", "dist"]
+}

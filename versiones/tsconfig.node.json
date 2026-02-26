@@ -1,0 +1,43 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    /* Entorno técnico: Node + tooling de build, MSR e infra */
+    "target": "ES2022",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+
+    /* Resolución pensada para bundlers modernos (Vite, Rollup) */
+    "moduleResolution": "bundler",
+    "moduleDetection": "force",
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+
+    /* Solo chequeo de tipos, sin emitir JS desde configs */
+    "noEmit": true,
+    "skipLibCheck": true,
+
+    /* Reglas de tipos endurecidas para scripts críticos */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noImplicitReturns": true,
+    "noImplicitOverride": true,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Tipos de plataforma para CLI, builders y orquestadores TAMV */
+    "types": ["node", "vite/client"],
+
+    /* Usa la misma raíz y aliases del ecosistema TAMV */
+    "baseUrl": "."
+  },
+  "include": [
+    "vite.config.ts",
+    "vitest.config.ts",
+    "scripts/**/*.ts",
+    "tools/**/*.ts"
+  ]
+}

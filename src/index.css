@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
+🧬 TAMV DM-X4™ Design System
+Quantum-Reactive Crystal Glow Design
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Deep Black & Navy Metallic - Background */
+    --background: 220 95% 5%;
+    --foreground: 50 15% 92%;
+    
+    /* Metallic Navy Blue - Primary Identity */
+    --primary: 220 100% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 220 100% 35%;
+    --primary-dark: 230 95% 12%;
+    
+    /* Hyper-realistic Silver & Crystal - Secondary */
+    --secondary: 210 20% 75%;
+    --secondary-foreground: 220 95% 5%;
+    --secondary-glow: 200 25% 85%;
+    
+    /* Iridescent Aqua Blue - Accent */
+    --accent: 180 100% 45%;
+    --accent-foreground: 0 0% 100%;
+    --accent-glow: 180 100% 65%;
+    
+    /* Surfaces - Glass & Crystal Effects */
+    --card: 220 90% 8%;
+    --card-foreground: 50 15% 92%;
+    --card-glass: 220 80% 10%;
+    
+    --popover: 220 90% 8%;
+    --popover-foreground: 50 15% 92%;
+    
+    /* Emotional States - Enhanced Aqua & Blues */
+    --resonance: 180 100% 50%;
+    --calm: 220 100% 40%;
+    --energy: 180 100% 65%;
+    --focus: 210 60% 70%;
+    
+    /* Crystal Glow System */
+    --crystal-cyan: 180 100% 50%;
+    --crystal-purple: 270 100% 60%;
+    --crystal-pink: 320 100% 60%;
+    --crystal-blue: 210 100% 60%;
+    
+    /* System - Metallic Accents */
+    --muted: 220 10% 25%;
+    --muted-foreground: 210 15% 65%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 220 50% 18%;
+    --input: 220 80% 12%;
+    --ring: 180 100% 45%;
+    
+    --radius: 1rem;
+    
+    /* Gradients - TAMV Crystal Signature */
+    --gradient-quantum: linear-gradient(135deg, hsl(220 100% 25%), hsl(180 100% 45%), hsl(210 20% 75%));
+    --gradient-gold: linear-gradient(135deg, hsl(50 100% 85%), hsl(180 100% 65%));
+    --gradient-dream: linear-gradient(135deg, hsl(220 100% 35%), hsl(180 100% 50%), hsl(200 25% 85%));
+    --gradient-glass: linear-gradient(135deg, hsla(220 80% 10% / 0.85), hsla(210 70% 8% / 0.6));
+    --gradient-crystal: linear-gradient(135deg, hsla(180 100% 50% / 0.1), hsla(270 100% 60% / 0.1), hsla(320 100% 60% / 0.1));
+    
+    /* Shadows - Crystal & Aqua Glow */
+    --shadow-quantum: 0 8px 32px hsla(180 100% 45% / 0.35);
+    --shadow-glow: 0 0 40px hsla(180 100% 65% / 0.5);
+    --shadow-cyber: 0 4px 24px hsla(210 20% 75% / 0.25);
+    --shadow-crystal: 0 0 30px hsla(180 100% 50% / 0.3), 0 0 60px hsla(270 100% 60% / 0.2);
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* XR Depth */
+    --depth-1: 0 2px 8px hsla(0 0% 0% / 0.1);
+    --depth-2: 0 4px 16px hsla(0 0% 0% / 0.15);
+    --depth-3: 0 8px 32px hsla(0 0% 0% / 0.2);
+    --depth-4: 0 16px 64px hsla(0 0% 0% / 0.3);
+    
+    /* Sidebar widths */
+    --sidebar-collapsed: 72px;
+    --sidebar-expanded: 280px;
+    --topbar-height: 72px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+  }
+}
+
+@layer utilities {
+  .text-gradient-quantum {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-quantum);
+  }
+  
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+  
+  .text-gradient-dream {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-dream);
+  }
+  
+  /* Crystal Glass Effects */
+  .glass-effect {
+    background: var(--gradient-glass);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsla(180 100% 50% / 0.1);
+  }
+  
+  .crystal-glass {
+    background: linear-gradient(
+      135deg,
+      hsla(220 80% 10% / 0.7) 0%,
+      hsla(220 80% 8% / 0.5) 50%,
+      hsla(220 80% 10% / 0.7) 100%
+    );
+    backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid hsla(180 100% 50% / 0.15);
+    box-shadow: 
+      inset 0 1px 0 hsla(180 100% 80% / 0.1),
+      0 8px 32px hsla(0 0% 0% / 0.3),
+      0 0 0 1px hsla(180 100% 50% / 0.05);
+  }
+  
+  .crystal-glow {
+    box-shadow: 
+      0 0 20px hsla(180 100% 50% / 0.2),
+      0 0 40px hsla(180 100% 50% / 0.1),
+      inset 0 0 20px hsla(180 100% 50% / 0.05);
+  }
+  
+  .crystal-border {
+    border: 1px solid hsla(180 100% 50% / 0.2);
+    position: relative;
+  }
+  
+  .crystal-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      hsla(180 100% 50% / 0.3),
+      hsla(270 100% 60% / 0.1),
+      hsla(320 100% 60% / 0.3)
+    );
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+  
+  .glow-quantum {
+    box-shadow: var(--shadow-quantum);
+  }
+  
+  .glow-cyber {
+    box-shadow: var(--shadow-cyber);
+  }
+  
+  .glow-crystal {
+    box-shadow: var(--shadow-crystal);
+  }
+  
+  /* Animations */
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  
+  @keyframes glow {
+    from { filter: drop-shadow(0 0 10px hsla(180 100% 50% / 0.5)); }
+    to { filter: drop-shadow(0 0 20px hsla(180 100% 50% / 0.8)); }
+  }
+  
+  .animate-shimmer {
+    animation: shimmer 2s ease-in-out infinite;
+  }
+  
+  @keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+  }
+  
+  .animate-crystal-pulse {
+    animation: crystal-pulse 3s ease-in-out infinite;
+  }
+  
+  @keyframes crystal-pulse {
+    0%, 100% { 
+      box-shadow: 
+        0 0 20px hsla(180 100% 50% / 0.2),
+        0 0 40px hsla(180 100% 50% / 0.1);
+    }
+    50% { 
+      box-shadow: 
+        0 0 30px hsla(180 100% 50% / 0.4),
+        0 0 60px hsla(180 100% 50% / 0.2),
+        0 0 80px hsla(270 100% 60% / 0.1);
+    }
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-glow;
+  }
+  
+  .glass-card {
+    @apply bg-card-glass backdrop-blur-xl border border-border/50;
+  }
+  
+  .quantum-border {
+    @apply border border-primary/30 hover:border-primary/60 transition-all;
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  @keyframes spin-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+
+  .animate-spin-reverse {
+    animation: spin-reverse 15s linear infinite;
+  }
+  
+  /* Accordion Smart Collapse */
+  .accordion-section {
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .accordion-section.collapsed {
+    max-height: 0;
+  }
+  
+  .accordion-section.expanded {
+    max-height: 500px;
+  }
+  
+  /* Non-intrusive sidebar hover zone */
+  .sidebar-hover-trigger {
+    position: fixed;
+    width: 20px;
+    height: 100vh;
+    z-index: 100;
+    cursor: pointer;
+  }
+}
